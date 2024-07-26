@@ -7,6 +7,11 @@ Based on the following:
 3. phpLiteAdmin database admin for SQLite<br>
 4. Cebe Markdown parser
 
+### Proposed Changes (WIP)
+1. Pagination on Topics and Posts
+2. Automated Sitemap
+3. Views Count on Topics
+
 ### Installation
 1. **Download** all files and put it in your webspace.<br>
    Can be in a subdirectory.<br><br>
