@@ -75,6 +75,9 @@ switch($act):
     case 'signup':
         require('inc/signup.php');
         break;
+    case 'sitemap':
+        require('inc/sitemap.php');
+        break;
     case 'home':
     default:
 endswitch;

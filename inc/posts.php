@@ -35,8 +35,13 @@ $originalPoster = $db->query($sql)->fetchColumn();
 <?php
 if (defined('UNAME') && !$locked) {
 ?>
-<div id="submitlink">
-    <a href="?act=newpost&tid=<?php echo $tid ?>">Post Reply</a>
+<div id="submitlink-container">
+    <div id="submitlink">
+        <a href="?act=newpost&tid=<?php echo $tid ?>">Post Reply</a>
+    </div>
+    <div id="opposite-text">
+        <?= "Post Views: $views"; ?>
+    </div>
 </div>
 <?php
 } elseif (defined('ULEVEL') && ULEVEL > 0 && $locked) {
@@ -77,7 +82,7 @@ foreach($db->query($sql) as $post) {
     $userid = $post->userid;
     $sql = "SELECT username FROM users WHERE uid=$userid";
     $username = $db->query($sql)->fetchColumn();
-    echo '<div class="posthead">'.$date.' '.$username.' Views: '.$views.'</div>'."\n";
+    echo '<div class="posthead">'.$date.' '.$username.'</div>'."\n";
     $message = $parser->parse($post->message);
     echo '<div class="postbody">'.$message.'</div>'."\n";
 }
